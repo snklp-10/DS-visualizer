@@ -22,10 +22,10 @@ const QueueInfoLog: React.FC<QueueInfoLogProps> = ({ logs }) => {
     }
   };
   return (
-    <div className="border rounded-xl p-6 h-[85%]">
-      <h2 className="text-lg font-semibold mb-4">Queue Operation Log</h2>
+    <div className="border rounded-xl p-6 mb-4 ring-1 ring-blue-300">
+      <h2 className="text-lg font-semibold mb-4">Queue Activity Log</h2>
 
-      <div className="space-y-3 text-md overflow-y-auto max-h-70 pr-2">
+      <div className="space-y-3 text-md overflow-y-auto h-40 pr-2">
         {logs.length === 0 ? (
           <p className="text-gray-500">No activity yet.</p>
         ) : (

@@ -29,3 +29,28 @@ export interface LogItem {
   message: string;
   operation: string;
 }
+
+export type QueueConcept =
+  | "enqueue"
+  | "dequeue"
+  | "front"
+  | "underflow"
+  | "practice";
+
+export const conceptWeights: Record<QueueConcept, number> = {
+  enqueue: 25,
+  dequeue: 25,
+  front: 20,
+  underflow: 10,
+  practice: 20,
+};
+
+export const calculateProgress = (completed: Set<QueueConcept>): number => {
+  let total = 0;
+
+  completed.forEach((concept) => {
+    total += conceptWeights[concept];
+  });
+
+  return total;
+};

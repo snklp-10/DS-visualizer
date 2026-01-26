@@ -1,4 +1,5 @@
-"use Client";
+"use client";
+
 import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
@@ -20,7 +21,6 @@ const QueueCtrls: React.FC<QueueCtrlsProps> = ({
     if (value.trim() === "") return;
 
     const numValue: number = Number(value);
-
     if (isNaN(numValue)) return;
 
     onEnqueue(numValue);
@@ -28,7 +28,8 @@ const QueueCtrls: React.FC<QueueCtrlsProps> = ({
   };
 
   return (
-    <div className="flex w-full gap-4 justify-center items-center h-20 border border-blue-300 rounded-xl">
+    <div className="flex w-full justify-center items-center gap-3 rounded-xl px-4 py-3">
+      {/* ✅ Input Tile */}
       <Input
         type="number"
         placeholder="Enter value"
@@ -36,27 +37,38 @@ const QueueCtrls: React.FC<QueueCtrlsProps> = ({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.value)
         }
-        className="px-3 py-2 rounded h-20 border-0"
+        className="w-55 h-12 text-lg border border-gray-300 rounded-lg focus-visible:ring-0"
       />
 
-      <div className="flex w-full items-center justify-center gap-10">
+      {/* ✅ Buttons Row */}
+      <div className="flex justify-center items-center gap-3">
         <Button
           onClick={handleEnqueue}
-          className="px-4 py-2 rounded-2xl  h-full text-lg w-30"
+          className="h-12 px-6 rounded-lg text-base font-semibold"
         >
           Enqueue
         </Button>
+
         <Button
           onClick={onDequeue}
-          className="px-4 py-2 rounded-2xl  h-full text-lg w-30"
+          className="h-12 px-6 rounded-lg text-base font-semibold"
         >
           Dequeue
         </Button>
+
         <Button
           onClick={onFront}
-          className="px-4 py-2 rounded-2xl  h-full text-lg w-30"
+          className="h-12 px-6 rounded-lg text-base font-semibold"
         >
           Front
+        </Button>
+
+        {/* ✅ Placeholder for Another Function */}
+        <Button
+          variant="outline"
+          className="h-12 px-6 rounded-lg text-base font-semibold"
+        >
+          Another Function
         </Button>
       </div>
     </div>
