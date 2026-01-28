@@ -9,7 +9,7 @@ const QueueInfoLog: React.FC<QueueInfoLogProps> = ({ logs }) => {
   const getAccent = (operation: string): string => {
     switch (operation) {
       case "enQueue":
-        return "bg-green-50";
+        return "bg-green-50 border-green-600";
 
       case "deQueue":
         return "bg-red-50";
